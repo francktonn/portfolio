@@ -179,6 +179,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===================================
+// EmailJS
+// ===================================
+
+emailjs.init('aB5GOkYH3d4QsNu5c');
+
+// ===================================
 // Form Handling
 // ===================================
 
@@ -187,22 +193,32 @@ const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    // Get form data
-    const formData = {
+    const submitBtn = contactForm.querySelector('.btn-submit');
+    const originalHTML = submitBtn.innerHTML;
+
+    // État de chargement
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>Envoi en cours...</span><i class="fas fa-spinner fa-spin"></i>';
+
+    const templateParams = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
+        title: document.getElementById('subject').value,
+        message: document.getElementById('message').value,
     };
 
-    // Simulate form submission
-    console.log('Form submitted:', formData);
-
-    // Show success message
-    showNotification('Message envoyé avec succès! Je vous répondrai bientôt.', 'success');
-
-    // Reset form
-    contactForm.reset();
+    emailjs.send('service_95ymzbd', 'template_79di3km', templateParams)
+        .then(() => {
+            showNotification('Message envoyé avec succès ! Je te répondrai bientôt.', 'success');
+            contactForm.reset();
+        })
+        .catch(() => {
+            showNotification('Erreur lors de l\'envoi. Réessaie ou contacte-moi directement par email.', 'error');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalHTML;
+        });
 });
 
 // ===================================
