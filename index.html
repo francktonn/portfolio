@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de développeur - Découvrez mes projets et compétences">
+    <title>Portfolio | Développeur Web</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-bracket">&lt;</span>
+                Portfolio
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link">À propos</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
+                <li><a href="#projets" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-background">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+            <div class="gradient-blob blob-3"></div>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content hero-animate">
+                <p class="hero-greeting">Bonjour, je suis</p>
+                <h1 class="hero-title">
+                    <span class="title-line">Franck Tonon</span>
+                </h1>
+                <p class="hero-description">
+                    Développeur web junior passionné, en apprentissage actif et à la recherche de mes premières opportunités professionnelles.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projets" class="btn btn-primary">
+                        <span>Voir mes projets</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Me contacter</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:contact@email.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image hero-animate-right">
+                <div class="image-wrapper">
+                    <div class="image-placeholder">
+                        <i class="fas fa-code fa-5x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#apropos" class="scroll-down">
+            <span>Scroll</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="apropos">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-number">01.</span>
+                À propos de moi
+            </h2>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p>
+                        Je m'appelle Franck Tonon et je suis développeur web en début de parcours. Passionné par le monde du développement, j'ai décidé de me lancer dans cet univers avec enthousiasme et beaucoup de curiosité.
+                    </p>
+                    <p>
+                        J'apprends activement les technologies du web — HTML, CSS, JavaScript et bien d'autres — en combinant formations en ligne, projets personnels et pratique quotidienne. Chaque bug résolu et chaque fonctionnalité réalisée me confortent dans ce choix de carrière.
+                    </p>
+                    <p>
+                        Mon objectif : progresser continuellement, contribuer à des projets concrets et intégrer une équipe où je pourrai apporter ma motivation tout en continuant à grandir.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-seedling"></i>
+                            <div>
+                                <h4>Débutant</h4>
+                                <p>en progression</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-laptop-code"></i>
+                            <div>
+                                <h4>Projets</h4>
+                                <p>personnels</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-fire"></i>
+                            <div>
+                                <h4>100%</h4>
+                                <p>motivé</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image reveal">
+                    <div class="image-frame">
+                        <div class="image-placeholder-about">
+                            <i class="fas fa-user fa-5x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="competences">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-number">02.</span>
+                Mes compétences
+            </h2>
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-category reveal">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML/CSS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-vuejs"></i>
+                            <span>Vue.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-sass"></i>
+                            <span>Sass</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category reveal">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-node"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category reveal">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Outils & Autres</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projets">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-number">03.</span>
+                Mes projets
+            </h2>
+            <div class="projects-grid">
+                <!-- Projet 1 -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-preview">
+                            <iframe
+                                src="https://anilist.co/home"
+                                title="AniList"
+                                loading="lazy"
+                                scrolling="no"
+                                tabindex="-1"
+                            ></iframe>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://anilist.co/home" target="_blank" rel="noopener" class="project-link" aria-label="Voir le site">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="Code source" title="Bientôt disponible">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">À venir</span>
+                        </div>
+                        <h3 class="project-title">Projet 1</h3>
+                        <p class="project-description">Description du projet à venir...</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-placeholder project-placeholder--wip">
+                            <i class="fas fa-hammer"></i>
+                            <span>En cours</span>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="Voir le site" title="Bientôt disponible">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="Code source" title="Bientôt disponible">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">À venir</span>
+                        </div>
+                        <h3 class="project-title">Projet 2</h3>
+                        <p class="project-description">Description du projet à venir...</p>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <div class="project-placeholder project-placeholder--wip">
+                            <i class="fas fa-hammer"></i>
+                            <span>En cours</span>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="Voir le site" title="Bientôt disponible">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="Code source" title="Bientôt disponible">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">À venir</span>
+                        </div>
+                        <h3 class="project-title">Projet 3</h3>
+                        <p class="project-description">Description du projet à venir...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="title-number">04.</span>
+                Contactez-moi
+            </h2>
+            <div class="contact-content">
+                <div class="contact-info reveal">
+                    <h3>Discutons de votre projet</h3>
+                    <p>
+                        Vous avez un projet en tête ou simplement envie d'échanger ? N'hésitez pas à me contacter. Je suis toujours ouvert aux nouvelles opportunités et collaborations.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:tononfranck521@gmail.com">tononfranck521@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <a href="tel:+33612345678">+33 6 68 64 94 63</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Localisation</h4>
+                                <p>Maureillas-Las-Illas, France</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i>
+                            Nom complet
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder="Jean Dupont"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="jean.dupont@email.com"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">
+                            <i class="fas fa-tag"></i>
+                            Sujet
+                        </label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            required
+                            placeholder="Demande de collaboration"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment"></i>
+                            Message
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            rows="6"
+                            placeholder="Votre message..."
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Envoyer le message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Franck Tonon. Tous droits réservés.</p>
+                <p class="footer-built">Construit avec <i class="fas fa-heart"></i> et JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
