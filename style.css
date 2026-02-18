@@ -705,6 +705,7 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    align-items: stretch;
 }
 
 .skill-item {
@@ -712,7 +713,8 @@ section {
     align-items: center;
     justify-content: flex-start;
     gap: 0.85rem;
-    padding: 0.9rem 1.25rem;
+    padding: 0 1.25rem;
+    min-height: 4rem;
     background: var(--bg-primary);
     border: 2px solid var(--glass-border);
     border-radius: 12px;
