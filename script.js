@@ -279,69 +279,6 @@ document.head.appendChild(style);
 // Parallax JS supprimé — les blobs ont déjà leur animation CSS (float) sur GPU
 
 // ===================================
-// Project Preview — fallback screenshot si iframe bloquée
-// ===================================
-
-document.querySelectorAll('.project-preview').forEach(preview => {
-    const iframe = preview.querySelector('iframe');
-    if (!iframe) return;
-
-    const url = iframe.src;
-    let resolved = false;
-
-    // Timeout : si l'iframe ne charge pas dans 5s → fallback
-    const timer = setTimeout(() => {
-        if (!resolved) fallbackToScreenshot(preview, url);
-    }, 5000);
-
-    iframe.addEventListener('load', () => {
-        resolved = true;
-        clearTimeout(timer);
-        // Vérifie si le contenu est accessible (même origine uniquement)
-        // Pour les sites cross-origin bloqués, contentDocument est null
-        try {
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
-            if (!doc || !doc.body || doc.body.innerHTML === '') {
-                fallbackToScreenshot(preview, url);
-            }
-        } catch (e) {
-            // Erreur cross-origin = site chargé normalement (pas bloqué)
-            // L'iframe affiche bien le contenu, pas besoin de fallback
-        }
-    });
-
-    iframe.addEventListener('error', () => {
-        resolved = true;
-        clearTimeout(timer);
-        fallbackToScreenshot(preview, url);
-    });
-});
-
-function fallbackToScreenshot(preview, url) {
-    const iframe = preview.querySelector('iframe');
-    if (!iframe) return;
-
-    const encodedUrl = encodeURIComponent(url);
-    const screenshotUrl = `https://image.thum.io/get/width/800/crop/600/${encodedUrl}`;
-
-    const img = document.createElement('img');
-    img.src = screenshotUrl;
-    img.alt = 'Aperçu du site';
-    img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:top;display:block;';
-
-    img.onerror = () => {
-        // Dernier recours : placeholder visuel
-        preview.innerHTML = `
-            <div class="project-placeholder project-placeholder--wip">
-                <i class="fas fa-globe"></i>
-                <span>Aperçu indisponible</span>
-            </div>`;
-    };
-
-    iframe.replaceWith(img);
-}
-
-// ===================================
 // Project Card Tilt Effect (Optional Enhancement)
 // ===================================
 
