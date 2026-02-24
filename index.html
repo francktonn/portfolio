@@ -281,7 +281,7 @@
             </h2>
             <div class="projects-grid">
                 <!-- Projet 1 -->
-                <div class="project-card reveal">
+                <div class="project-card reveal" data-url="https://porsche-vitrine.vercel.app/" data-title="Site vitrine Porsche" data-screenshot="https://image.thum.io/get/width/1200/crop/800/https://porsche-vitrine.vercel.app/">
                     <div class="project-image">
                         <div class="browser-mockup">
                             <div class="browser-bar">
@@ -492,6 +492,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- Project Viewer -->
+    <div class="project-viewer" id="projectViewer">
+        <div class="viewer-header">
+            <button class="viewer-back" id="viewerBack">
+                <i class="fas fa-arrow-left"></i>
+                <span>Retour au portfolio</span>
+            </button>
+            <div class="viewer-title" id="viewerTitle"></div>
+            <a class="viewer-open" id="viewerOpen" href="#" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+                <span>Ouvrir le site</span>
+            </a>
+        </div>
+        <div class="viewer-body">
+            <iframe id="viewerIframe" src="" title="Prévisualisation du projet" loading="lazy"></iframe>
+            <div class="viewer-blocked" id="viewerBlocked">
+                <img id="viewerScreenshot" src="" alt="Aperçu du projet">
+                <div class="viewer-blocked-msg">
+                    <i class="fas fa-info-circle"></i>
+                    Ce site ne peut pas être affiché en intégré.
+                    <a id="viewerBlockedLink" href="#" target="_blank" rel="noopener noreferrer">Ouvrir dans un nouvel onglet</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>

@@ -295,6 +295,99 @@ document.head.appendChild(style);
 // Parallax JS supprimé — les blobs ont déjà leur animation CSS (float) sur GPU
 
 // ===================================
+// Project Viewer
+// ===================================
+
+const projectViewer   = document.getElementById('projectViewer');
+const viewerBack      = document.getElementById('viewerBack');
+const viewerIframe    = document.getElementById('viewerIframe');
+const viewerTitle     = document.getElementById('viewerTitle');
+const viewerOpen      = document.getElementById('viewerOpen');
+const viewerBlocked   = document.getElementById('viewerBlocked');
+const viewerScreenshot = document.getElementById('viewerScreenshot');
+const viewerBlockedLink = document.getElementById('viewerBlockedLink');
+
+function openViewer(url, title, screenshot) {
+    viewerTitle.textContent = title;
+    viewerOpen.href = url;
+    viewerBlockedLink.href = url;
+
+    // Réinitialise l'état
+    viewerBlocked.classList.remove('visible');
+    viewerIframe.src = '';
+
+    projectViewer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // Tente de charger l'iframe
+    let resolved = false;
+
+    const timer = setTimeout(() => {
+        if (!resolved) showFallback(screenshot);
+    }, 6000);
+
+    viewerIframe.onload = () => {
+        resolved = true;
+        clearTimeout(timer);
+        try {
+            // Si cross-origin bloqué, contentDocument lance une erreur → iframe OK
+            const doc = viewerIframe.contentDocument;
+            if (doc && doc.body && doc.body.innerHTML === '') {
+                showFallback(screenshot);
+            }
+        } catch (e) {
+            // Chargé correctement (cross-origin = pas bloqué)
+        }
+    };
+
+    viewerIframe.onerror = () => {
+        resolved = true;
+        clearTimeout(timer);
+        showFallback(screenshot);
+    };
+
+    viewerIframe.src = url;
+}
+
+function showFallback(screenshot) {
+    viewerIframe.src = '';
+    viewerScreenshot.src = screenshot;
+    viewerBlocked.classList.add('visible');
+}
+
+function closeViewer() {
+    projectViewer.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+        viewerIframe.src = '';
+        viewerBlocked.classList.remove('visible');
+    }, 400);
+}
+
+// Clic sur une carte avec data-url
+document.querySelectorAll('.project-card[data-url]').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+        // Ne pas intercepter les clics sur les liens internes (overlay)
+        if (e.target.closest('.project-link')) return;
+        openViewer(
+            card.dataset.url,
+            card.dataset.title,
+            card.dataset.screenshot
+        );
+    });
+});
+
+viewerBack.addEventListener('click', closeViewer);
+
+// Fermer avec Échap
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && projectViewer.classList.contains('open')) {
+        closeViewer();
+    }
+});
+
+// ===================================
 // Project Card Tilt Effect (Optional Enhancement)
 // ===================================
 
