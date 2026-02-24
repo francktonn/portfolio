@@ -1291,6 +1291,16 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-placeholder--preview,
+    .project-placeholder--wip {
+        padding: 2rem;
+    }
+
     /* Contact */
     .contact-content {
         gap: 2.5rem;
