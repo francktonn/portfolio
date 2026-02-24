@@ -808,11 +808,11 @@ section {
     border: 1px solid var(--glass-border);
     border-radius: 20px;
     overflow: hidden;
-    transition: var(--transition-base);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
 
@@ -820,6 +820,73 @@ section {
     position: relative;
     overflow: hidden;
     aspect-ratio: 16/10;
+}
+
+/* Browser mockup */
+.browser-mockup {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-tertiary);
+}
+
+.browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0.75rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--glass-border);
+    flex-shrink: 0;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.browser-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.browser-dots span:nth-child(1) { background: #ff5f57; }
+.browser-dots span:nth-child(2) { background: #ffbd2e; }
+.browser-dots span:nth-child(3) { background: #28c840; }
+
+.browser-url {
+    flex: 1;
+    background: var(--bg-primary);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.browser-screen {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.browser-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .browser-screen img {
+    transform: scale(1.05);
 }
 
 .project-placeholder {
@@ -839,12 +906,13 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(99, 102, 241, 0.9);
+    background: rgba(99, 102, 241, 0.88);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: var(--transition-base);
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
 }
 
 .project-card:hover .project-overlay {
@@ -852,7 +920,7 @@ section {
 }
 
 .project-card:hover .project-placeholder {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .project-links {
